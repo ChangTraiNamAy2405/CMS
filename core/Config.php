@@ -5,7 +5,7 @@ namespace Core;
 class Config {
   private static $config = [
     'version'                 => '0.0.1',
-    'root_dir'                => '/cms',    // se la dau / trong live server (path)
+    'root_dir'                => '/cms/',    // se la dau / trong live server (path)
     'default_controler'       => 'Blog',    // default home controler
     'default_layout'          => 'default', // default layout that is used
     'default_site_title'      => 'Freeskills', // Default site title

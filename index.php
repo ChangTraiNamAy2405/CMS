@@ -1,6 +1,6 @@
 <?php
 session_start();
-use \Core\Config;   // su dung file namespace la Core va dung ham Config tranh trung ten voi cac ham khac
+use \Core\{Config, Router};   // su dung file namespace la Core va dung ham Config tranh trung ten voi cac ham khac
 // define constants
 define('PROOT', __DIR__);   //__dir__ show duong dan cua file.
 define('DS', DIRECTORY_SEPARATOR);  // show dau gach cheo "\"
@@ -16,9 +16,15 @@ spl_autoload_register(function($className) {
   if(file_exists($path)) {
     include($path);
   }
-  var_dump($path); // tach nhung phan trong phan use dau trang.
 });
 
-$db_name = Config::get('db_name');
-var_dump($db_name);
+$rootDir = Config::get('root_dir');
+define('ROOT', $rootDir);
+
+$url = $_SERVER['REQUEST_URI'];
+$url = str_replace(ROOT, '', $url);
+$url = preg_replace('/(\?.+)/', '', $url);
+Router::route($url);
+
+
 ?>
