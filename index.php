@@ -18,12 +18,12 @@ spl_autoload_register(function($className) {
   }
 });
 
-$rootDir = Config::get('root_dir');
+$rootDir = Config::get('root_dir'); //Core\Config.php
 define('ROOT', $rootDir);
 
-$url = $_SERVER['REQUEST_URI'];
-$url = str_replace(ROOT, '', $url);
-$url = preg_replace('/(\?.+)/', '', $url);
+$url = $_SERVER['REQUEST_URI'];   // lay ra nhung gi nguoi dung nhap vao tren thanh search engine.
+$url = str_replace(ROOT, '', $url); //loai bo phan root (/cms/)
+$url = preg_replace('/(\?.+)/', '', $url); // loai nhung ki tu sau dau ? trong url.
 Router::route($url);
 
 ?>
