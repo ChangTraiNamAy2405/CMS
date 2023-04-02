@@ -26,5 +26,4 @@ $url = str_replace(ROOT, '', $url);
 $url = preg_replace('/(\?.+)/', '', $url);
 Router::route($url);
 
-
 ?>
