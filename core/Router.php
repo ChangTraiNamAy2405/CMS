@@ -20,7 +20,14 @@ class Router {
     $action .= 'Action';
     array_shift($urlParts);
 
+    if(!class_exists($controller)) {
+      throw new \Exception("the controller \"{$controllerName}\" does not exist");
+    }
     $controllerClass = new $controller($controllerName, $actionName);
+
+    if(!method_exists($controllerClass, $action)) {
+      throw new \Exception("the method \"{$action}\" does not exist on the \"{$controller}\" control");
+    }
     call_user_func_array([$controllerClass, $action], $urlParts);
 
   }
