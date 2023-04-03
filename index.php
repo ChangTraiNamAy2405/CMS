@@ -25,5 +25,6 @@ $url = $_SERVER['REQUEST_URI'];   // lay ra nhung gi nguoi dung nhap vao tren th
 $url = str_replace(ROOT, '', $url); //loai bo phan root (/cms/)
 $url = preg_replace('/(\?.+)/', '', $url); // loai nhung ki tu sau dau ? trong url.
 Router::route($url);
+// file nay de chay ham route va xu li $url duoc nguoi dung nhap vao.
 
 ?>

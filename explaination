@@ -1,0 +1,8 @@
+1. có 2 phần, phan core va phan app.
+trong phan co dat cac namespace la core, en ngoai co file index va .htacess de lay va xu ly url.
+Trong folder core co cac phan config(cai dat cau hinh), Controller(cac lenh dieu huong duoc nhan tu url),
+router(lay thong tin cua dieu huong va thuc hien ham trong class dieu huong do).
+ file view(lay duong dan cua 
+view, lay duong dan cua layout sau do, thực hiện hàm render để thẩy các file chứa nội dung lên
+ màn hình chính. đây là thư mục người dùng có thể nhìn thấy)
+2. 
